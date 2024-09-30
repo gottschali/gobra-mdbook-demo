@@ -17,5 +17,5 @@
 - [Channels (draft)]()
 
 ---
-
+[Debug](./debug.md)
 [References](./references.md)
