@@ -7,6 +7,12 @@ title = "Gobra Book (Demo)"
 
 [output.html]
 theme = "theme"
+additional-js = [
+              "editor.js",
+              "mode-golang.js", # copied from ace-builds/src-noconflict
+              "mode-gobra.js",  # based on mode-golang.js
+              ]
+
 
 [output.html.playground]
 editable = true

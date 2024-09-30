@@ -18,9 +18,21 @@ window.editors = [];
             fontSize: "0.875em" // please adjust the font size of the code in general.css
         });
 
+        // Extract the language of the code block from the class name
+        let language = "gobra"
+        for (const cls of new Array(...editable.classList)) {
+            if (cls.startsWith("language-"))  {
+                language = cls.replace("language-", "")
+            }
+        }
+        if (language === "go") {
+            language = "golang"
+        }
+
+
         editor.$blockScrolling = Infinity;
 
-        editor.getSession().setMode("ace/mode/golang");
+        editor.getSession().setMode(`ace/mode/${language}`);
 
         editor.originalCode = editor.getValue();
 
