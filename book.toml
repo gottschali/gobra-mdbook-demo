@@ -12,7 +12,11 @@ additional-js = [
               "mode-golang.js", # copied from ace-builds/src-noconflict
               "mode-gobra.js",  # based on mode-golang.js
               ]
+mathjax-support = true
 
+[output.html.code.hidelines]
+gobra = "~"
+go    = "~"
 
 [output.html.playground]
 editable = true
