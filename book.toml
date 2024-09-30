@@ -4,3 +4,10 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Gobra Book (Demo)"
+
+[output.html]
+theme = "theme"
+
+[output.html.playground]
+editable = true
+copy-js = true
