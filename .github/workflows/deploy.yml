@@ -29,6 +29,8 @@ jobs:
           mkdir mdbook
           curl -sSL $url | tar -xz --directory=./mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
+      - name: Install Quiz preprocessor
+        run: cargo install mdbook-quiz --locked --version 0.3.10
       - name: Build Book
         run: |
           mdbook build
