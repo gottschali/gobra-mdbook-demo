@@ -21,3 +21,5 @@ go    = "~"
 [output.html.playground]
 editable = true
 copy-js = true
+
+[preprocessor.quiz]

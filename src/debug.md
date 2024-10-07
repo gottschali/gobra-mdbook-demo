@@ -100,3 +100,8 @@ func contains(s []int, x int) (isContained bool) {
   return false, 0
 }
 ```
+## Quizzes
+
+And now, a _quiz_:
+
+{{#quiz ../quizzes/rust-variables.toml}}

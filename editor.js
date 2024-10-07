@@ -9,8 +9,9 @@ window.editors = [];
         let display_line_numbers = window.playground_line_numbers || false;
 
         let editor = ace.edit(editable);
-            editor.setOptions({
+        editor.setOptions({
             highlightActiveLine: false,
+            enableBasicAutocompletion: true,
             showPrintMargin: false,
             showLineNumbers: display_line_numbers,
             showGutter: display_line_numbers,
