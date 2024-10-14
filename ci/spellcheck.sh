@@ -2,8 +2,9 @@
 
 set -eu
 
+export LANG=en_US.UTF-8
 aspell --version
-
+echo "LANG=$LANG"
 # Checks project Markdown files for spelling mistakes.
 
 # Notes:
