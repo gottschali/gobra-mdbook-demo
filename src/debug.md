@@ -60,12 +60,8 @@ func contains(s []int, x int) (isContained bool, idx int) {
   return false, 0
 }
 ```
-## Mathjax
-
-\\[\frac{\left(\mathbf{\{P\}}^{\prime}\right) s \left(\mathbf{\{Q\}}^{\prime}\right)}{\mathbf{\{P\}} s \mathbf{\{Q\}}} \left(\operatorname{Cons}\right) \quad \text{if } \mathbf{\{P\}} \vDash \mathbf{\{P\}}^{\prime} \text{ and } \mathbf{\{Q\}}^{\prime} \vDash \mathbf{\{Q\}}\\]
-
 ## Hiding lines
-This block is not highlighted since highlight.js does not know gobra.
+This block is not highlighted since highlight.js does not know Gobra.
 ```gobra,should_panic
 ~package tutorial
 

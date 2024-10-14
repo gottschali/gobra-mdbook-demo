@@ -2,7 +2,7 @@
 
 Gobra uses *implicit dynamic frames*, a variant of *separation logic*, to support reasoning about mutable heap data. In this model, each heap location is associated with an *access permission*. Access permissions are held by method executions and transferred between methods upon call and return. A method may access a location or make a call only if the appropriate permission is held. 
 
-## Accesibility Predicate
+## Accessibility Predicate
 
 In Go, heap locations can be thought of as addresses of pointers. The permission to access a pointer `x` is denoted by the *accessibility predicate* `acc(x)`. Having permission to a pointer implies that the pointer is not `nil`, Go's version of null. Access predicates are not duplicable resources, meaning that an accessibility predicate `P` does not entail `P && P`, where `&&` is a separating conjunction.  
 
@@ -42,7 +42,7 @@ func client1() {
 }
 ```
 
-Similar to `client1`, `client2` allocates a `pair` pointer, as well. However, the allocation happens implicitly. In Gobra, when a variable is referenced (or captured by a closure), it has to be annotated with `@`. The annotation expresses that the variable is a heap location and as such involves permissions. The annotation could be inferred automatically, but we believe that inferring it makes the behavior harder to predict. Otherwise, `client1` is identical to `client2`.
+Similar to `client1`, `client2` allocates a `pair` pointer, as well. However, the allocation happens implicitly. In Gobra, when a variable is referenced (or captured by a closure), it has to be annotated with `@`. The annotation expresses that the variable is a heap location and as such involves permissions. The annotation could be inferred automatically, but we believe that inferring it makes the behaviour harder to predict. Otherwise, `client1` is identical to `client2`.
 
 ```go
 func client2() {
@@ -60,7 +60,7 @@ Gobra offers fractional permissions, meaning that it can distinguish between dif
 
 Gobra provides two key mechanisms for specifying permission to a (potentially unbounded) number of heap locations: recursive [predicates](#predicates) and *quantified permissions*.
 
-While predicates can be a natural choice for modeling entire data  structures which are traversed in an orderly top-down fashion,  quantified permissions enable point-wise specifications, suitable for modeling heap structures that can be traversed in multiple directions, random-access data structures such as arrays, and unordered data structures such as graphs.
+While predicates can be a natural choice for modelling entire data  structures which are traversed in an orderly top-down fashion,  quantified permissions enable point-wise specifications, suitable for modelling heap structures that can be traversed in multiple directions, random-access data structures such as arrays, and unordered data structures such as graphs.
 
 The basic idea is to allow resource assertions to occur within the body of a `forall` quantifier. In our example, function `addToSlice` receives a slice `s` and adds the integer `n` to each element of the slice. 
 
