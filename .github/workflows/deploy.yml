@@ -8,6 +8,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install aspell
         run: sudo apt-get install aspell && aspell --version
       - name: Install shellcheck
